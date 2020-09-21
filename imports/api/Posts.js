@@ -2,6 +2,8 @@ import { Mongo } from 'meteor/mongo';
 
 export const Posts = new Mongo.Collection('reddit-api');
 
+
+
 Meteor.methods({
     getResultsFromReddit: function() {
       response = HTTP.call('GET', 'http://www.reddit.com/r/popular/.json', {});
@@ -17,7 +19,7 @@ Meteor.methods({
           permalink: data.permalink,
           thumbnail: false
         };
-        
+
         if (data.thumbnail != "self" && Meteor.call('isUrl', data.thumbnail)) {
             post.thumbnail = data.thumbnail
         }

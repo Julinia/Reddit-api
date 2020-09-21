@@ -2,6 +2,7 @@ h1 {
   margin: 4%;
   text-align: center;
 }
+
 .thumbnails {
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@ h1 {
 .thumbnail {
   margin: 10px;
 }
+
 .thumbnail-content {
   display: flex;
   flex: 1 1 100%;
@@ -19,11 +21,13 @@ h1 {
   position: relative;
   justify-content: center;
 }
+
 .content {
   flex: 50%;
   justify-content: center;
   padding: 10px;
 }
+
 img {
   border: 10px;
   width: 300px;
