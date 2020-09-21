@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const Post = () => {
-  const [counter, setCounter] = useState(0);
-
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-
+export const Post = ({ post }) => {
   return (
-    <div>
-      <button onClick={increment}>Click Me</button>
-      <p>You've pressed the button {counter} times.</p>
+    <div className="thumbnail">
+      <div className="thumbnail-content">
+        <div className="image">
+          { post.thumbnail ?
+            <img src={post.thumbnail}>
+            </img>
+          : null}
+        </div>
+        <div className="content">
+          <p className="author">
+            Author: {post.author}
+          </p>
+          <p className="title">
+            {post.title}
+          </p>
+          <a href={'https://www.reddit.com' + post.permalink}> Go to the post</a>
+        </div>
+      </div>
     </div>
   );
-};
+}
